@@ -1,8 +1,6 @@
-// @Flow
-
 import React from 'react';
 
-import { Form, Input, Row, Col, Button, Typography, Select } from 'antd';
+import { Form, Input, Button, Typography, Select } from 'antd';
 
 const Step2 = ({ nextStep, handleChange, values, form }) => {
 	const { getFieldDecorator } = form;

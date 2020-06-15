@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Typography, Spin } from 'antd';
 
-import firebase, { db } from '../../firebase';
+import { db } from '../../firebase';
 
 const Success = ({ userInfo }) => {
 	const [loading, setLoading] = useState(false);
@@ -9,15 +9,9 @@ const Success = ({ userInfo }) => {
 	useEffect(() => {
 		setLoading(true);
 
-		const setData = async () => {
-			await db
-				.collection('users')
-				.add(userInfo)
-				.catch((err) => alert(`Oops, ${err}`));
-			await setLoading(false);
-		};
-
-		setData();
+		setTimeout(() => {
+			setLoading(false);
+		}, 2000);
 	}, []);
 
 	return (
@@ -32,11 +26,7 @@ const Success = ({ userInfo }) => {
 					<Spin size='large' />
 				) : (
 					<Typography.Title style={{ color: 'cornflowerblue' }} level={2}>
-						All Done,{' '}
-						<span style={{ textTransform: 'capitalize' }}>
-							{userInfo.firstName}
-						</span>
-						!
+						All Done, <span style={{ textTransform: 'capitalize' }}>User</span>!
 					</Typography.Title>
 				)}
 			</Col>

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Form, Input, Row, Col, Button, Typography } from 'antd';
-import { FormComponentProps } from 'antd/es/form';
 import './styles.css';
 
 const Step1 = ({ nextStep, handleChange, values, form }) => {
